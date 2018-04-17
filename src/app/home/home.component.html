@@ -3,42 +3,21 @@
 
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="title">How It Works ?</h2>
-        <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+        <h2 class="title">Use below form to add new item</h2>
       </div>
     </div> <!-- End row -->
-
-    <div class="row pt80">
-            <div class="col-sm-4">
-                <div class="features-2">
-                    <img src="images/drawing-tablet.png" alt="">
-                </div>
-                <div>
-                  <h3>Responsive Design</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div> <!-- end col -->
-
-            <div class="col-sm-4">
-                <div class="features-2">
-                    <img src="images/code-window.png" alt="">
-                </div>
-                <div>
-                  <h3>Clean Code</h3>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Ut enim ad minim veniam, quis.</p>
-                </div>
-            </div> <!-- end col -->
-
-            <div class="col-sm-4">
-                <div class="features-2">
-                  <img src="images/clock.png" alt="">
-                </div>
-                <div>
-                  <h3>Easy Customize</h3>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Ut enim ad minim veniam.</p>
-                </div>
-              </div> <!-- end col -->
-
-          </div> <!-- End row -->
+          <form>
+              <input type="text" class="txt" name="item" placeholder="Item Name" [(ngModel)] = "GoalText"/>
+              <p>
+                {{GoalText}}
+              </p>
+              <input type="submit"  class="btn" [value]="btnText" (click)="addItem()"/>
+          </form>
+          <div class="col">
+            Your Bucket List ({{itemCount}})
+            <p class="life-container" *ngFor="let goal of goals">
+                {{goal}}
+            </p>
+          </div>
   </div>
-</section> 
+</section>  
